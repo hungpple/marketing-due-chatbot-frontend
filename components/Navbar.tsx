@@ -122,7 +122,7 @@ export function Navbar() {
           className="group flex min-w-0 items-center gap-3 rounded-md focus:outline-none focus:ring-4 focus:ring-[#ee6224]/20"
         >
           <Image
-            src="/images/marketing-due-logo.jpg"
+            src="/images/Logo FOM White.png"
             alt="Logo Khoa Marketing DUE"
             width={48}
             height={48}

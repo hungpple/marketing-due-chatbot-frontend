@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { navItems } from "@/lib/content";
 
 const socialLinks = [
@@ -9,7 +10,7 @@ const socialLinks = [
   },
   {
     label: "Zalo",
-    href: "https://zalo.me/g/vdyxqi085",
+    href: "https://zalo.me/84707707580",
     icon: <ZaloIcon />,
   },
 ] as const;
@@ -32,6 +33,72 @@ function ZaloIcon() {
     <span className="text-[11px] font-black leading-none" aria-hidden="true">
       Zalo
     </span>
+  );
+}
+
+function ContactIconShell({ children }: { children: ReactNode }) {
+  return (
+    <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-white/10 text-orange-100">
+      {children}
+    </span>
+  );
+}
+
+function GraduationIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className="h-4 w-4"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      aria-hidden="true"
+    >
+      <path d="M22 10 12 5 2 10l10 5 10-5Z" />
+      <path d="M6 12.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.5" />
+      <path d="M22 10v6" />
+    </svg>
+  );
+}
+
+function EmailIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className="h-4 w-4"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      aria-hidden="true"
+    >
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m3 7 9 6 9-6" />
+    </svg>
+  );
+}
+
+function WebsiteIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className="h-4 w-4"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3.6 9h16.8" />
+      <path d="M3.6 15h16.8" />
+      <path d="M12 3a14.5 14.5 0 0 1 0 18" />
+      <path d="M12 3a14.5 14.5 0 0 0 0 18" />
+    </svg>
   );
 }
 
@@ -62,10 +129,37 @@ export function Footer() {
           <p className="text-sm font-bold uppercase tracking-[0.14em] text-orange-100">
             Liên hệ
           </p>
-          <div className="mt-4 space-y-2 text-sm leading-6 text-orange-50">
-            <p>Khoa Marketing - Trường Đại học Kinh tế, Đại học Đà Nẵng</p>
-            <p>Email: marketing@due.edu.vn</p>
-            <p>Website: due.udn.vn</p>
+          <div className="mt-4 space-y-3 text-sm leading-6 text-orange-50">
+            <p className="flex items-start gap-3 lg:justify-end">
+              <ContactIconShell>
+                <GraduationIcon />
+              </ContactIconShell>
+              <span>Khoa Marketing - Trường Đại học Kinh tế, Đại học Đà Nẵng</span>
+            </p>
+            <p className="flex items-start gap-3 lg:justify-end">
+              <ContactIconShell>
+                <EmailIcon />
+              </ContactIconShell>
+              <a
+                href="mailto:bttkhoamarketingdue@gmail.com"
+                className="rounded-sm text-orange-50 no-underline transition hover:text-orange-50 focus:outline-none focus:ring-2 focus:ring-white/25"
+              >
+                Email: bttkhoamarketingdue@gmail.com
+              </a>
+            </p>
+            <p className="flex items-start gap-3 lg:justify-end">
+              <ContactIconShell>
+                <WebsiteIcon />
+              </ContactIconShell>
+              <a
+                href="https://due.udn.vn/vi-vn/khoa/marketing"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-sm text-orange-50 no-underline transition hover:text-orange-50 focus:outline-none focus:ring-2 focus:ring-white/25"
+              >
+                Website: due.udn.vn/vi-vn/khoa/marketing
+              </a>
+            </p>
           </div>
           <div className="mt-5 flex gap-3 lg:justify-end">
             {socialLinks.map((item) => (

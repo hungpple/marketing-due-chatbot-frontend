@@ -10,6 +10,7 @@ import {
 } from "react";
 import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { ChatAvatar } from "@/components/ChatAvatar";
 import { quickQuestions } from "@/lib/content";
 
 type Source = {
@@ -451,9 +452,11 @@ export function ChatbotUI() {
       >
         <div className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden rounded-lg border border-[#ee6224]/15 bg-white shadow-xl shadow-[#9f3512]/10 dark:border-[#ee6224]/20 dark:bg-[#1f1510] dark:shadow-[#ee6224]/5">
           <div className="flex items-start gap-4 border-b border-[#ee6224]/15 bg-gradient-to-r from-[#ee6224] to-[#9f3512] px-5 py-4 text-white dark:border-[#ee6224]/20 dark:from-[#2a1b14] dark:to-[#1f1510]">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-white/15 text-sm font-black">
-              AI
-            </div>
+            <ChatAvatar
+              role="bot"
+              size="lg"
+              className="border-white/60 shadow-[#6f240d]/20"
+            />
             <div className="min-w-0 flex-1">
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-orange-100">
                 Trợ lý tuyển sinh Khoa Marketing-DUE
@@ -535,8 +538,9 @@ function ProcessingProgress({ currentStep }: { currentStep: number }) {
   const activeStep = processingSteps[currentStep] ?? processingSteps[0];
 
   return (
-    <div className="flex justify-start">
-      <div className="w-full max-w-[88%] rounded-lg border border-[#ee6224]/15 bg-white px-4 py-4 shadow-sm shadow-[#9f3512]/5 dark:border-[#ee6224]/20 dark:bg-[#1f1510]">
+    <div className="flex items-start justify-start gap-3">
+      <ChatAvatar role="bot" className="mt-1" />
+      <div className="min-w-0 max-w-[calc(100%-3.75rem)] rounded-lg border border-[#ee6224]/15 bg-white px-4 py-4 shadow-sm shadow-[#9f3512]/5 dark:border-[#ee6224]/20 dark:bg-[#1f1510] sm:max-w-[86%]">
         <div className="flex items-center gap-2 text-sm font-bold text-zinc-700 dark:text-orange-100">
           <span className="rounded bg-[#ee6224]/10 px-2 py-0.5 text-xs font-black text-[#ee6224]">
             AI
@@ -611,14 +615,18 @@ function MessageBubble({
   return (
     <div
       data-message-id={message.id}
-      className={["flex", isUser ? "justify-end" : "justify-start"].join(" ")}
+      className={[
+        "flex items-start gap-3",
+        isUser ? "justify-end" : "justify-start",
+      ].join(" ")}
     >
+      {!isUser ? <ChatAvatar role="bot" className="mt-1" /> : null}
       <div
         className={[
-          "max-w-[88%] rounded-lg px-4 py-3 text-sm leading-7 shadow-sm sm:max-w-[86%]",
+          "min-w-0 max-w-[calc(100%-3.75rem)] break-words rounded-lg px-4 py-3 text-sm leading-7 shadow-sm",
           isUser
-            ? "bg-[#ee6224] text-white"
-            : "border border-[#ee6224]/15 bg-white text-zinc-800 dark:border-[#ee6224]/20 dark:bg-[#2a1b14] dark:text-orange-50",
+            ? "bg-[#ee6224] text-white sm:max-w-[82%]"
+            : "border border-[#ee6224]/15 bg-white text-zinc-800 dark:border-[#ee6224]/20 dark:bg-[#2a1b14] dark:text-orange-50 sm:max-w-[86%]",
         ].join(" ")}
       >
         {isUser ? (
@@ -643,6 +651,7 @@ function MessageBubble({
           </p>
         ) : null}
       </div>
+      {isUser ? <ChatAvatar role="user" className="mt-1" /> : null}
     </div>
   );
 }

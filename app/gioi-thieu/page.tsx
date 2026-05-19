@@ -39,7 +39,7 @@ export default function AboutPage() {
           <div className="space-y-5 text-base leading-8 text-zinc-700 dark:text-orange-100/85">
             <p>
               Marketing-DUE Chatbot được xây dựng để hỗ trợ thí sinh, phụ huynh và người quan
-              tâm tiếp cận thông tin tuyển sinh của Khoa Marketing-DUE.
+              tâm tiếp cận thông tin tuyển sinh của Khoa Marketing, Trường Đại học Kinh tế - Đại học Đà Nẵng.
             </p>
             <p>
               Hệ thống giúp giảm thời gian tra cứu, gợi ý câu hỏi thường gặp và
@@ -90,8 +90,7 @@ export default function AboutPage() {
               Sẵn sàng đặt câu hỏi?
             </h2>
             <p className="mt-3 max-w-2xl text-sm leading-7 text-zinc-650 dark:text-orange-100/80">
-              Mở Marketing-DUE Chatbot để được hỗ trợ tra cứu thông tin tuyển sinh Khoa
-              Marketing DUE.
+              Mở Marketing-DUE Chatbot để được hỗ trợ tra cứu thông tin tuyển sinh Khoa Marketing, Trường Đại học Kinh tế - Đại học Đà Nẵng.
             </p>
           </div>
           <Link

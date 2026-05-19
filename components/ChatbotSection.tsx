@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ChatAvatar } from "@/components/ChatAvatar";
 import { chatbotHighlights } from "@/lib/content";
 import { SectionHeader } from "@/components/SectionHeader";
 
@@ -38,9 +39,11 @@ export function ChatbotSection() {
         <div className="relative overflow-hidden rounded-lg border border-[#ee6224]/15 bg-white p-4 shadow-xl shadow-[#9f3512]/10 dark:border-[#ee6224]/20 dark:bg-[#1f1510] dark:shadow-[#ee6224]/5 sm:p-6">
           <div className="rounded-lg border border-[#ee6224]/15 bg-[#fff4ed] dark:border-[#ee6224]/20 dark:bg-[#160f0b]">
             <div className="flex items-center gap-3 border-b border-[#ee6224]/15 bg-gradient-to-r from-[#ee6224] to-[#9f3512] px-4 py-4 text-white dark:border-[#ee6224]/20 dark:from-[#2a1b14] dark:to-[#1f1510]">
-              <span className="flex h-10 w-10 items-center justify-center rounded-md bg-white/15 text-sm font-black">
-                AI
-              </span>
+              <ChatAvatar
+                role="bot"
+                size="sm"
+                className="border-white/60 shadow-[#6f240d]/20"
+              />
               <div>
                 <p className="text-xs font-black uppercase tracking-[0.16em] text-orange-100">
                   Marketing-DUE Chatbot
@@ -50,17 +53,26 @@ export function ChatbotSection() {
             </div>
 
             <div className="space-y-4 p-4 sm:p-6">
-              <div className="max-w-[86%] rounded-lg border border-[#ee6224]/15 bg-white px-4 py-3 text-sm leading-6 text-zinc-700 shadow-sm dark:border-[#ee6224]/20 dark:bg-[#2a1b14] dark:text-orange-50">
+              <div className="flex items-start gap-3">
+                <ChatAvatar role="bot" size="sm" className="mt-1" />
+                <div className="min-w-0 max-w-[calc(100%-3.25rem)] rounded-lg border border-[#ee6224]/15 bg-white px-4 py-3 text-sm leading-6 text-zinc-700 shadow-sm dark:border-[#ee6224]/20 dark:bg-[#2a1b14] dark:text-orange-50 sm:max-w-[86%]">
                 Xin chào, bạn muốn tìm hiểu ngành Marketing, Digital Marketing
                 hay Truyền thông Marketing?
+                </div>
               </div>
-              <div className="ml-auto max-w-[82%] rounded-lg bg-[#ee6224] px-4 py-3 text-sm font-semibold leading-6 text-white shadow-sm">
+              <div className="flex items-start justify-end gap-3">
+                <div className="min-w-0 max-w-[calc(100%-3.25rem)] rounded-lg bg-[#ee6224] px-4 py-3 text-sm font-semibold leading-6 text-white shadow-sm sm:max-w-[82%]">
                 Em muốn biết phương thức xét tuyển năm nay.
+                </div>
+                <ChatAvatar role="user" size="sm" className="mt-1" />
               </div>
-              <div className="max-w-[88%] rounded-lg border border-[#ee6224]/15 bg-white px-4 py-3 text-sm leading-6 text-zinc-700 shadow-sm dark:border-[#ee6224]/20 dark:bg-[#2a1b14] dark:text-orange-50">
+              <div className="flex items-start gap-3">
+                <ChatAvatar role="bot" size="sm" className="mt-1" />
+                <div className="min-w-0 max-w-[calc(100%-3.25rem)] rounded-lg border border-[#ee6224]/15 bg-white px-4 py-3 text-sm leading-6 text-zinc-700 shadow-sm dark:border-[#ee6224]/20 dark:bg-[#2a1b14] dark:text-orange-50 sm:max-w-[88%]">
                 Bạn có thể hỏi về điểm chuẩn, tổ hợp xét tuyển, học phí hoặc
                 học bổng. Khi có dữ liệu chính thức, mình sẽ trích nguồn để bạn
                 kiểm tra lại.
+                </div>
               </div>
             </div>
           </div>
