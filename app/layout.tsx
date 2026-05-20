@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     "Website Marketing-DUE Chatbot hỗ trợ tư vấn tuyển sinh cho Khoa Marketing, Trường Đại học Kinh tế - Đại học Đà Nẵng.",
   icons: {
-    icon: [{ url: "/images/favicon.png", type: "image/png" }],
+    icon: [{ url: "/images/Logo_DUE.png", type: "image/png" }],
   },
 };
 
