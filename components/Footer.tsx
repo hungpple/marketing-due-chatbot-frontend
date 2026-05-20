@@ -10,7 +10,7 @@ const socialLinks = [
   },
   {
     label: "Zalo",
-    href: "https://zalo.me/84707707580",
+    href: "https://zalo.me/g/umczpz428",
     icon: <ZaloIcon />,
   },
 ] as const;
